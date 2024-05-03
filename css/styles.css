@@ -1,0 +1,23 @@
+.gallery{
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+.gallery-item{
+    gap: 24px;
+ list-style: none;
+ /* border: 20px solid green; */
+
+
+} 
+
+/* .gallery-link{
+   border: 20px solid blue;
+} */
+ .gallery-image{
+    list-style: none;
+    width: 360px;
+    height: 200px;
+    /* border: 20px solid red; */
+}

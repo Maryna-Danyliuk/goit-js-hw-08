@@ -85,18 +85,19 @@ const images = [
   }
   
 
-  const galleryItems = document.querySelectorAll('.gallery-item');
-  galleryItems.forEach(item => {
-      item.addEventListener('click', function(event) {
-          event.preventDefault(); // Забороняємо перехід за посиланням
-          const source = this.querySelector('.gallery-image').dataset.source;
-          const description = this.querySelector('.gallery-image').alt;
-  
-          const instance = basicLightbox.create(`
-              <img src="${source}" alt="${description}">
-          `);
-  
-          instance.show();
-      });
-  });
+ 
+  gallery.addEventListener('click', function(event) {
+   
+    if (event.target.classList.contains('gallery-image')) {
+        event.preventDefault(); // Забороняємо перехід за посиланням
+        const source = event.target.dataset.source;
+        const description = event.target.alt;
+
+        const instance = basicLightbox.create(`
+            <img src="${source}" alt="${description}">
+        `);
+
+        instance.show();
+    }
+});
 
